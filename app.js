@@ -33,6 +33,11 @@ app.get("/google", passport.authenticate("google", { scope: ["profile", "email"]
 app.get("/google/callback", passport.authenticate("google", { failureRedirect: "/failed" }), function (req, res) {
   res.redirect("/success");
 });
+app.get("/logout", (req, res) => {
+  req.session = null;
+  // req.logout();
+  res.redirect("/");
+});
 app.listen(5000, () => {
   console.log("app is running on port 5000");
 });
