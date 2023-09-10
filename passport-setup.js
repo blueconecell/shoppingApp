@@ -19,6 +19,10 @@ passport.use(
     },
     function (request, accessToken, refreshToken, profile, done) {
       console.log(profile);
+      console.log("##########################################");
+      console.log("##########################################");
+      console.log("##########################################");
+      console.log(accessToken);
       return done(null, profile);
     }
   )

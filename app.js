@@ -26,6 +26,11 @@ app.get("/", (req, res) => {
 });
 app.get("/success", (req, res) => {
   res.render("pages/profile.ejs", { name: req.user.displayName, email: req.user.emails[0].value, pic: req.user.photos[0].value });
+  // console.log(req[0]);
+  // console.log("##########################################");
+  // console.log("##########################################");
+  // console.log("##########################################");
+  // console.log(res[0]);
 });
 
 app.get("/google", passport.authenticate("google", { scope: ["profile", "email"] }));
