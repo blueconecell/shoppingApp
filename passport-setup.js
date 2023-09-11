@@ -18,11 +18,17 @@ passport.use(
       passReqToCallback: true,
     },
     function (request, accessToken, refreshToken, profile, done) {
+      console.log("##########################################");
+      console.log("##########################################");
+      console.log("##########################################");
       console.log(profile);
       console.log("##########################################");
       console.log("##########################################");
       console.log("##########################################");
+      console.log("accessToken :");
       console.log(accessToken);
+      console.log("refreshToken :");
+      console.log(refreshToken);
       return done(null, profile);
     }
   )
