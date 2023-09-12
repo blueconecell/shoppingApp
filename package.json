@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/blueconecell/shoppingApp#readme",
   "dependencies": {
+    "body-parser": "^1.20.2",
     "bootstrap-icons": "^1.10.5",
     "cookie-session": "^2.0.0",
     "dotenv": "^16.3.1",

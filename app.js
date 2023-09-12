@@ -29,6 +29,10 @@ app.get("/success", (req, res) => {
   console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
   console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
   console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+  console.log(req.session.passport);
+  console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+  console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+  console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
   console.log(req.user);
   console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
   console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
@@ -41,6 +45,12 @@ app.get("/success", (req, res) => {
 });
 
 app.get("/google", passport.authenticate("google", { scope: ["profile", "email"] }));
+
+// app.get("/login");
+
+app.get("/login", (req, res) => {
+  res.render("pages/login.ejs");
+});
 
 app.get("/google/callback", passport.authenticate("google", { failureRedirect: "/failed" }), function (req, res) {
   res.redirect("/success");
